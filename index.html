@@ -5,6 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Seiko</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .logo h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Menu mobile */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                padding: 10px;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                background-color: #444;
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+                color: white;
+                font-size: 18px;
+            }
+        }
+
+        /* Section introduction */
+        .intro {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+        }
+
+        /* Projets */
+        .projects {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Compétences */
+        .skills {
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <!-- En-tête -->
@@ -12,6 +150,7 @@
         <div class="logo">
             <h1>Seiko</h1>
         </div>
+        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
         <nav>
             <ul>
                 <li><a href="#about">À propos</a></li>
@@ -42,9 +181,8 @@
     <section id="projects" class="projects">
         <h2>🧣〃Mes Projets</h2>
         <div class="project-grid">
-            <!-- Projet Exemple -->
             <div class="project">
-                <img src="https://cdn.discordapp.com/attachments/1307748864211812373/1319077085314285618/wermbb.gif?ex=6766a004&is=67654e84&hm=40c9ab30d078e1678711beb9c49a2bfdea0464bc4d0548f79fbe566c5aad6a60&" alt="Projet 1">
+                <img src="https://cdn.discordapp.com/attachments/1307748864211812373/1319077085314285618/wermbb.gif" alt="Projet 1">
                 <div class="overlay">
                     <h3>🎁 Seiko</h3>
                     <p>Mon serveur communautaire</p>
@@ -52,15 +190,15 @@
                 </div>
             </div>
             <div class="project">
-                <img src="https://cdn.discordapp.com/attachments/1307748864211812373/1319798758128488520/IMG_0147.jpg?ex=676745e0&is=6765f460&hm=cd4f994820d81faab3682a99cc06e041d69fc0623bc2905b46eaa30aebb88e8d&" alt="Projet 2">
+                <img src="https://cdn.discordapp.com/attachments/1307748864211812373/1319798758128488520/IMG_0147.jpg" alt="Projet 2">
                 <div class="overlay">
                     <h3>🪄〃Reiko Bot</h3>
-                    <p>Des bots de tout type pour tout les gout personnaliser</p>
+                    <p>Des bots de tout type pour tout les goûts personnalisés</p>
                     <button class="btn" onclick="window.open('https://discord.gg/6VxjNZBZgF')">Visiter</button>
                 </div>
             </div>
             <div class="project">
-                <img src="https://cdn.discordapp.com/attachments/1307748864211812373/1319800641824096286/IMG_6336.jpg?ex=676747a1&is=6765f621&hm=4092ed6d2558c368afe8dc458ee5b040b953380f05e5b413d95f96ec1ed70e9f&" alt="Projet 3">
+                <img src="https://cdn.discordapp.com/attachments/1307748864211812373/1319800641824096286/IMG_6336.jpg" alt="Projet 3">
                 <div class="overlay">
                     <h3>🪄〃Reiko Support</h3>
                     <p>Un support 7j/7j</p>
@@ -69,7 +207,6 @@
             </div>
         </div>
     </section>
-    
 
     <!-- Compétences -->
     <section id="skills" class="skills">
@@ -84,5 +221,13 @@
             <div class="skill">C++</div>
         </div>
     </section>
+
+    <script>
+        // Fonction pour afficher/masquer le menu mobile
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
