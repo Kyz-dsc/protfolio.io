@@ -1,0 +1,146 @@
+/* Style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: white;
+    line-height: 1.6;
+}
+
+header {
+    background-color: linear-gradient(135deg, #000000, #ffffff);
+    padding: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Section d'introduction avec une image de fond */
+.intro {
+    background: url('https://cdn.discordapp.com/attachments/1307748864211812373/1319800905612394527/IMG_6343.jpg?ex=676747e0&is=6765f660&hm=7d2428aa8fbf13ddcbb494a4cf32f6d3715dac05e0a64f970647420b3470428e&') no-repeat center center/cover; /* Remplacez 'votre-image.jpg' par le chemin de votre image */
+    color: white;
+    text-align: center;
+    padding: 100px 5px;
+    height: 30vh/* Prendre toute la hauteur de la fenêtre */
+}
+
+.intro h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 3px 2px 4px rgba(0, 0, 0, 0.6); /* Ajoutez un ombrage pour rendre le texte lisible sur l'image */
+}
+
+.intro p {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Ajoutez un ombrage pour rendre le texte lisible sur l'image */
+}
+
+.about, .projects, .skills, .contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    margin-top: 100px;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 200px;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project:hover .overlay {
+    opacity: 1;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.skill {
+    background-color: #817b7b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
